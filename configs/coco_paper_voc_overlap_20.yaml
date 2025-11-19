@@ -1,0 +1,112 @@
+coco:
+  train_images: D:\\datasets\\coco\\train2017
+  train_ann: D:\\datasets\\coco\\annotations\\instances_train2017.json
+  val_images: D:\\datasets\\coco\\val2017
+  val_ann: D:\\datasets\\coco\\annotations\\instances_val2017.json
+
+# Paper scenario: VOC -> COCO. Base classes correspond to VOC's 20 categories mapped to COCO names.
+# New classes are the remaining COCO categories.
+
+base_classes:
+  - airplane
+  - bicycle
+  - bird
+  - boat
+  - bottle
+  - bus
+  - car
+  - cat
+  - chair
+  - cow
+  - dining table
+  - dog
+  - horse
+  - motorcycle
+  - person
+  - potted plant
+  - sheep
+  - couch
+  - train
+  - tv
+
+new_classes:
+  - truck
+  - traffic light
+  - fire hydrant
+  - stop sign
+  - parking meter
+  - bench
+  - elephant
+  - bear
+  - zebra
+  - giraffe
+  - backpack
+  - umbrella
+  - handbag
+  - tie
+  - suitcase
+  - frisbee
+  - skis
+  - snowboard
+  - sports ball
+  - kite
+  - baseball bat
+  - baseball glove
+  - skateboard
+  - surfboard
+  - tennis racket
+  - wine glass
+  - cup
+  - fork
+  - knife
+  - spoon
+  - bowl
+  - banana
+  - apple
+  - sandwich
+  - orange
+  - broccoli
+  - carrot
+  - hot dog
+  - pizza
+  - donut
+  - cake
+  - bed
+  - toilet
+  - laptop
+  - mouse
+  - remote
+  - keyboard
+  - cell phone
+  - microwave
+  - oven
+  - toaster
+  - sink
+  - refrigerator
+  - book
+  - clock
+  - vase
+  - scissors
+  - teddy bear
+  - hair drier
+  - toothbrush
+
+train:
+  batch_size: 2
+  lr: 0.005
+  weight_decay: 0.0005
+  epochs: 12
+  num_workers: 4
+  seed: 42
+
+distill:
+  use_kl: true
+  kl_weight: 0.0
+  roi_cls_weight: 0.5
+  roi_reg_weight: 0.5
+  rpn_cls_weight: 0.5
+  rpn_reg_weight: 0.5
+  kl_temperature: 2.0
+  roi_match_iou: 0.5
+  rpn_reg_weight_obj_thresh: 0.3
+

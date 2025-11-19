@@ -1,0 +1,47 @@
+data_root: D:\\datasets
+
+# VOC classes in order
+base_classes:
+  - aeroplane
+  - bicycle
+  - bird
+  - boat
+  - bottle
+  - bus
+  - car
+  - cat
+  - chair
+  - cow
+
+new_classes:
+  - diningtable
+  - dog
+  - horse
+  - motorbike
+  - person
+  - pottedplant
+  - sheep
+  - sofa
+  - train
+  - tvmonitor
+
+train:
+  batch_size: 2
+  lr: 0.005
+  weight_decay: 0.0005
+  epochs: 12
+  num_workers: 4
+  seed: 42
+
+distill:
+  use_kl: true
+  kl_weight: 0.0
+  roi_cls_weight: 0.5
+  roi_reg_weight: 0.5
+  rpn_cls_weight: 0.5
+  rpn_reg_weight: 0.5
+  kl_temperature: 2.0
+  pseudo_conf_thresh: 0.5
+  max_pseudo_per_image: 200
+  roi_match_iou: 0.5
+  rpn_reg_weight_obj_thresh: 0.3
